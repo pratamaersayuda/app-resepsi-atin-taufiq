@@ -1,0 +1,6 @@
+D:\Workspace\app-resepsi-atin-taufiq\src\main\java\id\api\AppResepsiAtinTaufiqApplication.java
+D:\Workspace\app-resepsi-atin-taufiq\src\main\java\id\api\controller\HomeControlller.java
+D:\Workspace\app-resepsi-atin-taufiq\src\main\java\id\api\controller\QrCodeGeneratorController.java
+D:\Workspace\app-resepsi-atin-taufiq\src\main\java\id\api\controller\ScanQrController.java
+D:\Workspace\app-resepsi-atin-taufiq\src\main\java\id\api\model\dto\ScanRequest.java
+D:\Workspace\app-resepsi-atin-taufiq\src\main\java\id\api\service\QrCodeService.java

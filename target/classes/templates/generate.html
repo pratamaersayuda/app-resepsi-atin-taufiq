@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Pernikahan Atin & Taufiq</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font & Tailwind -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Font Style -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .great-vibes {
+            font-family: 'Great Vibes', cursive;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center bg-fixed bg-center bg-cover backdrop-blur-md"
+      style="background-image: url('/images/bg-image.jpg');">
+
+<div class="bg-white/90 rounded-2xl shadow-2xl p-8 sm:p-10 w-full max-w-lg text-center">
+    <h1 class="text-3xl font-bold text-indigo-500 mb-1" style="font-family: ui-sans-serif;">Resepsi Pernikahan</h1>
+    <h1 class="text-4xl great-vibes text-emerald-400 mb-2">Atin & Taufiq</h1>
+    <h2 class="text-gray-600 text-base sm:text-lg mb-6">Cetak QRCODE Kehadiran</h2>
+
+    <form method="post" action="/generate/qrcode" class="w-full">
+        <input type="text"
+               name="text"
+               placeholder="Masukkan Nama Tamu Undangan ..."
+               required
+               class="w-full px-4 py-3 text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-400 transition mb-4" />
+        <button type="submit"
+                class="bg-emerald-400 hover:bg-emerald-600 text-white font-semibold py-3 px-6 rounded-lg w-full transition duration-300">
+            🎉 Generate QR Code
+        </button>
+    </form>
+
+    <div th:if="${qrImage}" class="mt-8">
+        <div class="flex justify-center items-center flex-wrap gap-4">
+            <div class="bg-white p-4 rounded-xl shadow-lg">
+                <img th:src="'data:image/png;base64,' + ${qrImage}" alt="QR Code" class="rounded-md shadow-md max-w-full h-auto"/>
+                <a th:href="'data:image/png;base64,' + ${qrImage}"
+                   th:download="'qrcode-' + ${text} + '.png'"
+                   class="inline-block mt-4 px-6 py-2 bg-emerald-500 hover:bg-emerald-700 text-white font-bold rounded-lg transition">
+                    ⬇ Download QR Code
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

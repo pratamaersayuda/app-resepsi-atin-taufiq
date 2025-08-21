@@ -1,0 +1,6 @@
+id\api\controller\HomeControlller.class
+id\api\service\QrCodeService.class
+id\api\controller\ScanQrController.class
+id\api\model\dto\ScanRequest.class
+id\api\controller\QrCodeGeneratorController.class
+id\api\AppResepsiAtinTaufiqApplication.class

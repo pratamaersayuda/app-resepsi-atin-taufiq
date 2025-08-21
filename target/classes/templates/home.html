@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>QR Code App - Menu Utama</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Inter & Great Vibes -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .subtitle {
+            font-family: 'Great Vibes', cursive;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-green-100 to-green-200 p-6">
+
+<!-- Logo Pernikahan -->
+<img src="/images/logo-wedding-at.png" alt="Logo Pernikahan" class="w-32 h-32 object-contain mb-4 shadow-md rounded-full border-4 border-white">
+
+<h1 class="text-3xl sm:text-4xl md:text-5xl font-semibold text-green-800 mb-2">
+    Selamat Datang di Aplikasi Scan & Generate QR Code
+</h1>
+<div class="subtitle text-2xl sm:text-3xl md:text-4xl text-green-900 mb-10">
+    Pernikahan Atin & Taufiq
+</div>
+
+<div class="flex flex-wrap justify-center gap-6 w-full max-w-md">
+    <a th:href="@{/scan}"
+       class="menu-btn bg-green-600 text-white text-lg font-medium px-8 py-4 rounded-xl shadow-md hover:bg-green-700 transform hover:scale-105 transition-all w-full sm:w-auto text-center">
+        Scan QR Code
+    </a>
+    <a th:href="@{/generate/qrcode}"
+       class="menu-btn bg-green-600 text-white text-lg font-medium px-8 py-4 rounded-xl shadow-md hover:bg-green-700 transform hover:scale-105 transition-all w-full sm:w-auto text-center">
+        Generate QR Code
+    </a>
+    <a th:href="@{/download/excel}"
+       class="menu-btn bg-emerald-500 text-white text-lg font-medium px-8 py-4 rounded-xl shadow-md hover:bg-emerald-600 transform hover:scale-105 transition-all w-full sm:w-auto text-center">
+        Download Excel Daftar Tamu
+    </a>
+</div>
+
+</body>
+</html>
